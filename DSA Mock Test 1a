@@ -21,12 +21,12 @@ Python Code:
 def moveZeros(num):
     if not (1 <= len(num) <= 10**4):
         print("Error: Invalid length of num array.")
-        return num
+        
 
     for n in num:
         if not (-2**31 <= n <= 2**31 - 1):
             print("Error: Invalid value in num array.")
-            return num
+            
     place = 0
     for curr in range(len(num)):
         if num[curr] != 0:
