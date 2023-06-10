@@ -1,0 +1,345 @@
+Question 1
+
+Given an integer n, return true if it is a power of two. Otherwise, return false.
+An integer n is a power of two, if there exists an integer x such that n == 2x.
+Example 1:
+Input: n = 1 
+Output: true
+Example 2:
+Input: n = 16 
+Output: true
+Example 3:
+Input: n = 3 
+Output: false
+
+Python Code:
+
+def PowerOfTwo(n):
+    if n <= 0:
+        return False
+
+    # Count the number of set bits
+    count = 0
+    while n > 0:
+        if n & 1:
+            count += 1
+        n >>= 1
+
+    return count == 1
+
+# Example usage:
+n = 1
+result = PowerOfTwo(n)
+print("Output:", result)  # Output: True
+
+n = 16
+result = PowerOfTwo(n)
+print("Output:", result)  # Output: True
+
+n = 3
+result = PowerOfTwo(n)
+print("Output:", result)  # Output: False
+
+
+*Question 2
+
+Given a number n, find the sum of the first natural numbers.
+
+**Example 1:**
+
+Input: n = 3 
+
+Output: 6
+
+**Example 2:**
+
+Input  : 5 
+
+Output : 15
+
+
+
+Python Code:
+
+def sumOfNaturalNumbers(n):
+    return (n * (n + 1)) // 2
+
+# Example usage:
+n = 3
+result = sumOfNaturalNumbers(n)
+print("Output:", result)  # Output: 6
+
+n = 5
+result = sumOfNaturalNumbers(n)
+print("Output:", result)  # Output: 15
+
+*Question 3
+
+****Given a positive integer, N. Find the factorial of N. 
+
+**Example 1:**
+
+Input: N = 5 
+
+Output: 120
+
+**Example 2:**
+
+Input: N = 4
+
+Output: 24
+
+Python Code:
+
+def factorial(N):
+    result = 1
+    for i in range(1, N+1):
+        result *= i
+    return result
+
+# Example usage:
+N = 5
+result = factorial(N)
+print("Output:", result)  # Output: 120
+
+N = 4
+result = factorial(N)
+print("Output:", result)  # Output: 24
+
+
+Python Code:
+
+def calculate_exponent(N, P):
+    result = pow(N, P)
+    return result
+
+# Example usage:
+N = 5
+P = 2
+result = calculate_exponent(N, P)
+print("Output:", result)  # Output: 25
+
+N = 2
+P = 5
+result = calculate_exponent(N, P)
+print("Output:", result)  # Output: 32
+
+
+*Question 4
+
+def calculate_exponent(N, P):
+    result = pow(N, P)
+    return result
+
+# Example usage:
+N = 5
+P = 2
+result = calculate_exponent(N, P)
+print("Output:", result)  # Output: 25
+
+N = 2
+P = 5
+result = calculate_exponent(N, P)
+print("Output:", result)  # Output: 32
+
+
+
+
+Given a number N and a power P, the task is to find the exponent of this number raised to the given power, i.e. N^P.
+
+**Example 1 :** 
+
+Input: N = 5, P = 2
+
+Output: 25
+
+**Example 2 :**
+Input: N = 2, P = 5
+
+Output: 32
+
+Python Code:
+
+def calculate_exponent(N, P):
+    result = pow(N, P)
+    return result
+
+# Example usage:
+N = 5
+P = 2
+result = calculate_exponent(N, P)
+print("Output:", result)  # Output: 25
+
+N = 2
+P = 5
+result = calculate_exponent(N, P)
+print("Output:", result)  # Output: 32
+
+
+*Question 5
+
+Given an array of integers **arr**, the task is to find maximum element of that array using recursion.
+
+**Example 1:**
+
+Input: arr = {1, 4, 3, -5, -4, 8, 6};
+Output: 8
+
+**Example 2:**
+
+Input: arr = {1, 4, 45, 6, 10, -8};
+Output: 45
+
+Python Code:
+
+def find_max(arr):
+    # Base case: If the array contains only one element, return that element
+    if len(arr) == 1:
+        return arr[0]
+    
+    # Divide the array into two halves
+    mid = len(arr) // 2
+    left_half = arr[:mid]
+    right_half = arr[mid:]
+    
+    # Recursive calls to find the maximum element in each half
+    max_left = find_max(left_half)
+    max_right = find_max(right_half)
+    
+    # Compare the maximum elements from each half and return the larger one
+    return max(max_left, max_right)
+
+# Example usage:
+arr = [1, 4, 3, -5, -4, 8, 6]
+result = find_max(arr)
+print("Output:", result)  # Output: 8
+
+arr = [1, 4, 45, 6, 10, -8]
+result = find_max(arr)
+print("Output:", result)  # Output: 45
+
+
+*Question 6
+
+Given first term (a), common difference (d) and a integer N of the Arithmetic Progression series, the task is to find Nth term of the series.
+
+**Example 1:**
+
+Input : a = 2 d = 1 N = 5
+Output : 6
+The 5th term of the series is : 6
+
+**Example 2:**
+
+Input : a = 5 d = 2 N = 10
+Output : 23
+The 10th term of the series is : 23
+
+Python Code:
+
+def find_nth_term(a, d, N):
+    nth_term = a + (N - 1) * d
+    return nth_term
+
+# Example usage:
+a = 2
+d = 1
+N = 5
+result = find_nth_term(a, d, N)
+print("Output:", result)  # Output: 6
+
+a = 5
+d = 2
+N = 10
+result = find_nth_term(a, d, N)
+print("Output:", result)  # Output: 23
+
+
+*Question 7
+
+Given a string S, the task is to write a program to print all permutations of a given string.
+
+**Example 1:**
+
+***Input:***
+
+*S = “ABC”*
+
+***Output:***
+
+*“ABC”, “ACB”, “BAC”, “BCA”, “CBA”, “CAB”*
+
+**Example 2:**
+
+***Input:***
+
+*S = “XY”*
+
+***Output:***
+
+*“XY”, “YX”*
+
+Python Code:
+
+def permutations(string):
+    result = []
+
+    # Base case: if the string has only one character, return it as a permutation
+    if len(string) == 1:
+        return [string]
+
+    # Iterate over each character in the string
+    for i in range(len(string)):
+        # Fix the current character as the first character
+        current = string[i]
+
+        # Generate all permutations of the remaining characters
+        remaining = string[:i] + string[i+1:]
+        permutations_of_remaining = permutations(remaining)
+
+        # Append the current character to each permutation of the remaining characters
+        for perm in permutations_of_remaining:
+            result.append(current + perm)
+
+    return result
+
+# Example usage:
+S = "ABC"
+permutations_of_S = permutations(S)
+print(permutations_of_S)
+
+S = "XY"
+permutations_of_S = permutations(S)
+print(permutations_of_S)
+# Output: ['ABC', 'ACB', 'BAC', 'BCA', 'CAB', 'CBA']
+['XY', 'YX']
+
+*Question 8
+Given an array, find a product of all array elements.
+
+**Example 1:**
+
+Input  : arr[] = {1, 2, 3, 4, 5}
+Output : 120
+**Example 2:** 
+Input  : arr[] = {1, 6, 3}
+Output : 18
+Python Code:
+
+def product_of_array(arr):
+    product = 1
+
+    # Iterate over each element in the array
+    for num in arr:
+        product *= num
+
+    return product
+
+# Example usage:
+arr = [1, 2, 3, 4, 5]
+result = product_of_array(arr)
+print(result) # Output: 120
+
+arr = [1, 6, 3]
+result = product_of_array(arr)
+print(result) # Output: 18
